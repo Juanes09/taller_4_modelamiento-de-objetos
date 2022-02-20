@@ -2,29 +2,13 @@ import java.util.InputMismatchException;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-/**
- * author Juan Esteban Patiño
- */
-public class Ordering_Methods extends Menu {
 
-    /**
-     * This class has the purpose of capturing the information entered by keyboard.
-     */
+public class Ordering_Methods extends Menu {
     Scanner input = new Scanner( System.in);
-    /**
-     * instance of the class to obtain formatting of a number in a smaller size
-     */
     static DecimalFormat nFormat = new DecimalFormat("#.00");
-    /**
-     * This is declaration of the array that type Double
-     */
     Double [] bubbleArray = new Double[size];
 
-    /**
-     *This method has the function to sort the array,
-     * according to the option chosen by the user,
-     * giving the possibility to organize either by the bubble method or by the quicksort method.
-     */
+
     public void orderingOptions(){
         try {
             int option;
@@ -52,9 +36,8 @@ public class Ordering_Methods extends Menu {
             input.nextInt();
         }
     }
-    /**
-     * Bubble sorting method
-     */
+
+
     public static void bubbleOrdering(){
 
         Double aux;
@@ -73,47 +56,35 @@ public class Ordering_Methods extends Menu {
             System.out.println(nFormat.format(bubbleArray[k]));
         }
     }
-    /**
-     * Quicksort ordering method.
-     *
-     * @param bubbleArray the bubble array
-     * @param firstNum    the first num
-     * @param lastNum     the last num
-     */
-    public void quickSortOrdering(Double[] bubbleArray, int  firstNum , int lastNum){
-        bubbleArray = number;
-        int x;
-        int y;
-        double pivot;
+
+    public static void quickSortOrdering(Double[] array, int  firstNum , int lastNum) {
+        array = number;
+        double pivot = array[firstNum];
+        int x = firstNum;
+        int y = lastNum;
         double aux;
 
-        x = firstNum;
-        y = lastNum;
-        pivot = bubbleArray[(firstNum + lastNum)/2];
-        do {
-            while (bubbleArray[x] < pivot){
-                x++;
-            }
-            while (bubbleArray[y]>pivot){
-                y--;
-            }
-            if (x <=y){
-                aux = bubbleArray[x];
-                bubbleArray[x] = bubbleArray[y];
-                bubbleArray[y] = aux;
+        while (x < y) {
+            while (array[x] <= pivot && x < y) x++;
+            while (array[y] > pivot) y--;
+
+            if (x < y) {
+                aux = array[x];
+                array[x] = array[y];
+                array[y] = aux;
                 x++;
                 y--;
             }
-        }while (x <= y);
-        if (firstNum < y){
-            quickSortOrdering(bubbleArray,firstNum,y);
         }
-        if(x < lastNum){
-            quickSortOrdering(bubbleArray,x,lastNum);
-        }
-        System.out.println("Arreglo ordenado con el metodo quicksort");
-        for (int k = 0 ; k < bubbleArray.length; k ++){
-            System.out.println(nFormat.format(bubbleArray[k]));
+        array[x] = array[y];
+        array[y] = pivot;
+
+        if (firstNum < y -1) quickSortOrdering(array,firstNum,y - 1);
+        if (firstNum < lastNum) quickSortOrdering(array,y -1, lastNum);
+
+        for (int i = 0; i < array.length ; i++) {
+            System.out.println(numFormat.format(array[i]));
         }
     }
+
 }

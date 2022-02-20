@@ -21,13 +21,13 @@ public class Menu {
      */
     static Double[] number;
     /**
-     * instance of the class to obtain formatting of a number in a smaller size
+     * instance od the class get format on the number
      */
     static DecimalFormat numFormat = new DecimalFormat("#.00");
 
 
     /**
-     * Method to specify the size of the array entered by the console
+     * Data array.
      */
     public void dataArray() {
         System.out.println(" Ingrese cantidad de elementos del arreglo");
@@ -38,7 +38,8 @@ public class Menu {
     }
 
     /**
-     * Gets the different values for the array
+     * Get data double [ ].
+     *
      * @return the double [ ]
      */
     public static Double[] getData() {
