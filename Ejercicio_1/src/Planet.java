@@ -15,7 +15,7 @@ public class Planet extends PlanetaryObject {
      */
 
 
-    public Planet(String name, double mass, double density, double averageDistance, double diameter, String referenceData) {
-        super(name, mass, density, averageDistance, diameter, referenceData);
+    public Planet(int id ,String name, double mass, double density, double averageDistance, double diameter, String referenceData) {
+        super(id,name, mass, density, averageDistance, diameter, referenceData);
     }
 }

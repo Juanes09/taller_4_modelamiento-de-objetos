@@ -19,15 +19,14 @@ public class Main {
         options = input.nextInt();
 
         try {
-            do {
+            do { String date1;
+                String date2;
+                PlanetaryObject planet1;
+                PlanetaryObject planet2;
+                double calculate;
                 switch (options) {
                     case 1:
-                        String date1;
-                        String date2;
-                        PlanetaryObject planet1;
-                        PlanetaryObject planet2;
-                        double calculate;
-                        solarSystem.viewPlatenarySystem();
+                        //solarSystem.viewPlatenarySystem();
                         System.out.println("Enter data for the first planet : ");
                         date1 = input.next();
                         planet1 = solarSystem.getDataObject(date1);

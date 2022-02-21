@@ -1,0 +1,13 @@
+
+¿Es posible ejecutar un programa en java que contenga varias clases con métodos main?
+En caso positivo, ¿cómo se determina el punto de entrada a un programa?
+
+ La respuesta a es este interrogante es SI... se pueden tener varios metodos con el mismo nombre , cabe tener en cuenta que ,
+ todo pragrama tiene una llave o metodo de arranque , en este caso java maneja el metodo main que se reconoce por tener la firma
+ (public static void main(String[] args) , por definición donde encontramos esta firma o esta sintaxis reconocemos que es el arranque del programa,
+ o la entrada al mismo.
+ si desde el mismo programa se contiene varios metodos con el mismo nombre se entendera que son sobrecargar del metodo.
+
+
+ Tambien esta posibilidad que se tengan en un proyecto varias clases principales que ejecurtaran ejemplos o acciones diferentes, es decir cada
+ cada metodo ejecutara un una accion diferente dentro del mismo programa

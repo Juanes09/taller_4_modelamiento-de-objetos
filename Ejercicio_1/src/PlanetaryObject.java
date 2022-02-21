@@ -5,7 +5,7 @@
  * @version 1.0
  */
 public abstract  class PlanetaryObject implements Comparable<PlanetaryObject> {
-
+    private int id;
     private double mass;
     private double density;
     private double diameter;
@@ -41,7 +41,7 @@ public abstract  class PlanetaryObject implements Comparable<PlanetaryObject> {
 
     /**
      * Instantiates a new Planetary object.
-     *
+     * @param id                  the id
      * @param name            the name
      * @param mass            the mass
      * @param density         the density
@@ -49,13 +49,21 @@ public abstract  class PlanetaryObject implements Comparable<PlanetaryObject> {
      * @param diameter        the diameter
      * @param referenceData   the reference data
      */
-    public PlanetaryObject(String name, double mass, double density, double averageDistance, double diameter,String referenceData) {
+    public PlanetaryObject(int id,String name, double mass, double density, double averageDistance, double diameter,String referenceData) {
+        this.id = id;
         this.mass = mass;
-        this.density = density;
         this.diameter = diameter;
         this.averageDistance = averageDistance;
         this.name = name;
         this.referenceData = referenceData;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     /**
@@ -166,6 +174,10 @@ public abstract  class PlanetaryObject implements Comparable<PlanetaryObject> {
         this.referenceData = referenceData;
     }
 
+    public boolean equals(PlanetaryObject planetObject){
+        return this.name.equals(planetObject.name);
+    }
+
     /**
      * The method for obtaining gravitation attraction.
      *
@@ -186,6 +198,7 @@ public abstract  class PlanetaryObject implements Comparable<PlanetaryObject> {
         double distance = objectInitial.averageDistance;
         if (!objectInitial.referenceData.equals(objectInitial.referenceData)) {
             distance += calculateDistanceObjectData(objectInitial);
+
         }
         return distance;
     }
@@ -240,12 +253,15 @@ public abstract  class PlanetaryObject implements Comparable<PlanetaryObject> {
 
     @Override
     public String toString() {
-        return "{" + " name='" + name + '\'' +
+        return "{Planet : " +
+                "id = "+ id + '\'' +
+                " name=" + name + '\'' +
                 ", mass=" + mass +
                 ", density=" + density +
                 ", diameter=" + diameter +
                 ", averageDistance=" + averageDistance +
-                ", referenceData='" + referenceData + '\'' +
+                ", referenceData='" +  + '\'' +
+
                 '}';
     }
 }
