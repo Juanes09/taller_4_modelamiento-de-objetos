@@ -44,12 +44,14 @@ public abstract  class PlanetaryObject implements Comparable<PlanetaryObject> {
      *
      * @param name            the name
      * @param mass            the mass
+     * @param density         the density
      * @param averageDistance the average distance
      * @param diameter        the diameter
      * @param referenceData   the reference data
      */
-    public PlanetaryObject(String name, double mass, double averageDistance, double diameter,String referenceData) {
+    public PlanetaryObject(String name, double mass, double density, double averageDistance, double diameter,String referenceData) {
         this.mass = mass;
+        this.density = density;
         this.diameter = diameter;
         this.averageDistance = averageDistance;
         this.name = name;
@@ -238,11 +240,12 @@ public abstract  class PlanetaryObject implements Comparable<PlanetaryObject> {
 
     @Override
     public String toString() {
-        return "{" +
-                "name = " + name +
-                "mass=" + mass +
-                "density=" + density +
-                "diameter=" + diameter +
+        return "{" + " name='" + name + '\'' +
+                ", mass=" + mass +
+                ", density=" + density +
+                ", diameter=" + diameter +
+                ", averageDistance=" + averageDistance +
+                ", referenceData='" + referenceData + '\'' +
                 '}';
     }
 }
