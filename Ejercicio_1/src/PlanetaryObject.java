@@ -23,7 +23,7 @@ public abstract  class PlanetaryObject implements Comparable<PlanetaryObject> {
      * The constant G.
      */
     final static double G = 6.6726E-11;
-    private PlanetaryObject referenceData;
+    private String referenceData;
 
     /**
      * Instantiates a new Planetary object.
@@ -48,7 +48,7 @@ public abstract  class PlanetaryObject implements Comparable<PlanetaryObject> {
      * @param diameter        the diameter
      * @param referenceData   the reference data
      */
-    public PlanetaryObject(String name, double mass, double averageDistance, double diameter,PlanetaryObject referenceData) {
+    public PlanetaryObject(String name, double mass, double averageDistance, double diameter,String referenceData) {
         this.mass = mass;
         this.diameter = diameter;
         this.averageDistance = averageDistance;
@@ -151,7 +151,7 @@ public abstract  class PlanetaryObject implements Comparable<PlanetaryObject> {
      *
      * @return the reference data
      */
-    public PlanetaryObject getReferenceData() {
+    public String getReferenceData() {
         return referenceData;
     }
 
@@ -160,7 +160,7 @@ public abstract  class PlanetaryObject implements Comparable<PlanetaryObject> {
      *
      * @param referenceData the reference data
      */
-    public void setReferenceData(PlanetaryObject referenceData) {
+    public void setReferenceData(String referenceData) {
         this.referenceData = referenceData;
     }
 
@@ -182,8 +182,8 @@ public abstract  class PlanetaryObject implements Comparable<PlanetaryObject> {
 
     private double calculateDistanceObjectData(PlanetaryObject objectInitial){
         double distance = objectInitial.averageDistance;
-        if (!objectInitial.referenceData.referenceData.equals(objectInitial.referenceData)) {
-            distance += calculateDistanceObjectData(objectInitial.referenceData);
+        if (!objectInitial.referenceData.equals(objectInitial.referenceData)) {
+            distance += calculateDistanceObjectData(objectInitial);
         }
         return distance;
     }
