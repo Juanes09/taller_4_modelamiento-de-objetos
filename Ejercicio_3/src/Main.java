@@ -1,5 +1,7 @@
 /**
  * author Juan Esteban Patiño
+ * @author  Juan Esteban Patiño
+ * @version 1.0
  */
 public class Main {
 

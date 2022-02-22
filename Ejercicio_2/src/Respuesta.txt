@@ -1,17 +1,17 @@
 
-¿Es posible ejecutar un programa en java que contenga varias clases con métodos Ejemplo?
+¿Es posible ejecutar un programa en java que contenga varias clases con métodos main?
 En caso positivo, ¿cómo se determina el punto de entrada a un programa?
 
  La respuesta a es este interrogante es SI... se pueden tener varios metodos con el mismo nombre , cabe tener en cuenta que ,
- todo pragrama tiene una llave o metodo de arranque , en este caso java maneja el metodo Ejemplo que se reconoce por tener la firma
- (public static void Ejemplo(String[] args) , por definición donde encontramos esta firma o esta sintaxis reconocemos que es el arranque del programa,
+ todo pragrama tiene una llave o metodo de arranque , en este caso java maneja el metodo main se reconoce por tener la firma
+ (public static void main(String[] args) , por definición donde encontramos esta firma o esta sintaxis reconocemos que es el arranque del programa,
  o la entrada al mismo.
  si desde el mismo programa se contiene varios metodos con el mismo nombre se entendera que son sobrecargas del mismo.
 
 
  Tambien esta la posibilidad de que se tengan en un proyecto varias clases principales que ejecurtaran ejemplos o acciones diferentes, es decir cada
- cada clase tendra su propio metodo Ejemplo que  ejecutara un una accion diferente dentro del programa.
+ cada clase tendra su propio metodo main que  ejecutara un una accion diferente dentro del programa.
 
- En el ejemplo podemos ver 2 clases y cada una tiene su propio metodo Ejemplo, por lo que podemos suponer que el arranque que este ejercio podria ser
+ En el ejemplo podemos ver 2 clases y cada una tiene su propio metodo main, por lo que podemos suponer que el arranque que este ejercicio podria ser
  cualquiera de los 2 , pero si notamos existe una de estas clases que hereda de la otra por lo que realizara las acciones de ambas clases , a diferencia
- de la que hereda , ya que solo ejecutara la acción para la que fue creada.
+ de la que no hereda , ya que solo ejecutara la acción para la que fue creada.

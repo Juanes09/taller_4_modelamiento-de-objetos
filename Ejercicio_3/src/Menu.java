@@ -1,10 +1,9 @@
 
-
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
- *author Juan Esteban Patiño
+ * class menu
  */
 public class Menu {
 

@@ -1,4 +1,5 @@
 public class Ejemplo extends Ejemplo1 {
+
     public static void main(String[] args) {
         multiplicar(5 , 5);
         suma(100, 20);
