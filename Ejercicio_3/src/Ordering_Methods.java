@@ -10,7 +10,7 @@ import java.util.Scanner;
  */
 public class Ordering_Methods extends Menu {
     /**
-     * instance od the class Scanner
+     * instance od the class Scanner input
      */
     Scanner input = new Scanner( System.in);
     /**
