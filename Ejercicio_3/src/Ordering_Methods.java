@@ -1,5 +1,4 @@
 import java.util.InputMismatchException;
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 
@@ -13,11 +12,8 @@ public class Ordering_Methods extends Menu {
      * instance od the class Scanner input
      */
     Scanner input = new Scanner( System.in);
-    /**
-     * instance od the class get format on the number
-     */
-    static DecimalFormat nFormat = new DecimalFormat("#.00");
-    //Double [] bubbleArray = new Double[size];
+
+
 
 
     /**

@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args){
 
 
-        Utils menu = new Utils("Car","mazda",2000,4,4,"red");
+        Utils menu = new Utils("","","",2021,5,5);
         menu.dataVehicle();
     }
 }

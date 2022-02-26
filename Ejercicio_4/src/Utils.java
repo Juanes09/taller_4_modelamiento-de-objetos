@@ -21,13 +21,14 @@ public class Utils extends Vehicle {
      *
      * @param type          the type
      * @param brand         the brand
+     * @param color         the color
      * @param model         the model
      * @param numPassengers the num passengers
      * @param numWheels     the num wheels
-     * @param color         the color
+
      */
-    public Utils(String type, String brand, int model, int numPassengers, int numWheels, String color) {
-        super(type, brand, model, numPassengers, numWheels, color);
+    public Utils(String type, String brand , String color , int model, int numPassengers, int numWheels) {
+        super(type, brand, color, model, numPassengers, numWheels);
     }
 
     /**
@@ -35,11 +36,11 @@ public class Utils extends Vehicle {
      * Method to set and obtain the values of vehicle attributes
      */
     public void dataVehicle() {
-        String systemContinue ="y" ;
+        String systemContinue = "y";
 
         for (int i = 0; i <= motors.size(); i++) {
 
-             if(systemContinue.equalsIgnoreCase("SI")){
+            if (systemContinue.equalsIgnoreCase("SI")) {
                 System.out.println("Enter the brand name of the " + getType());
                 this.setType(input.nextLine());
                 while ((getType().equals(""))) {
@@ -51,19 +52,20 @@ public class Utils extends Vehicle {
                 this.setBrand((input.nextLine()));
                 System.out.println("Enter the model of the" + getBrand());
                 this.setModel(input.nextInt());
+                System.out.println("Enter the color of the " + getBrand());
+                this.setColor(input.nextLine());
                 System.out.println("Enter the number of passengers for the " + getBrand());
                 this.setNumPassengers((input.nextInt()));
                 System.out.println("Enter the number of wheels " + getBrand());
                 this.setNumWheels(input.nextInt());
                 clearBuffer();
-                System.out.println("Enter the color of the " + getBrand());
-                this.setColor(input.nextLine());
-                motors.add(new Vehicle(getType(), getBrand(), getModel(), getNumPassengers(), getNumWheels(), getColor()));
-            System.out.println("to continue enter  (y/n)");
-            systemContinue = input.next();
-            }else{
-                 break;
-             }
+
+                motors.add(new Vehicle(getType(), getBrand(), getColor(), getModel(), getNumPassengers(), getNumWheels()));
+                System.out.println("to continue enter  (y/n)");
+                systemContinue = input.next();
+            } else {
+                break;
+            }
         }
 
         listVehicles();
@@ -84,7 +86,7 @@ public class Utils extends Vehicle {
      * Clear buffer.
      * Method to clear the cache from the memory buffer.
      */
-    public void clearBuffer () {
+    public void clearBuffer() {
         input.nextLine();
     }
 }

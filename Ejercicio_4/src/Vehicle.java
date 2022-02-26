@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * The type Vehicle.
  */
@@ -6,12 +8,15 @@ public class Vehicle {
 
     private String type;
     private String brand;
+    private String color;
     private int model;
     private int numPassengers;
     private int numWheels;
-    private String color;
 
 
+
+    Scanner input = new Scanner(System.in);
+    char option ;
     /**
      * Instantiates a new Vehicle.
      *
@@ -22,13 +27,14 @@ public class Vehicle {
      * @param numWheels     the num wheels
      * @param color         the color
      */
-    public Vehicle(String type, String brand, int model, int numPassengers, int numWheels, String color) {
+    public Vehicle(String type, String brand, String color, int model, int numPassengers, int numWheels) {
         this.type = type;
         this.brand = brand;
+        this.color = color;
         this.model = model;
         this.numPassengers = numPassengers;
         this.numWheels = numWheels;
-        this.color = color;
+
 
     }
 
@@ -56,6 +62,8 @@ public class Vehicle {
      * @return the brand
      */
     public String getBrand() {
+        System.out.print("Enter brand : ");
+        brand = input.next();
         return brand;
     }
 
@@ -69,14 +77,36 @@ public class Vehicle {
     }
 
     /**
+     * Gets color.
+     *
+     * @return the color
+     */
+    public String getColor() {
+        System.out.print("Enter color : ");
+        color = input.next();
+        return color;
+
+    }
+
+    /**
+     * Sets color.
+     *
+     * @param color the color
+     */
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    /**
      * Gets model.
      *
      * @return the model
      */
     public int getModel() {
+        System.out.print("Enter model : ");
+        model = input.nextInt();
         return model;
     }
-
     /**
      * Sets model.
      *
@@ -92,6 +122,8 @@ public class Vehicle {
      * @return the num passengers
      */
     public int getNumPassengers() {
+        System.out.print("Enter numPassengers: ");
+        numPassengers = input.nextInt();
         return numPassengers;
     }
 
@@ -110,6 +142,9 @@ public class Vehicle {
      * @return the num wheels
      */
     public int getNumWheels() {
+        System.out.print("Enter numWheels : ");
+        numWheels = input.nextInt();
+        clearBuffer();
         return numWheels;
     }
 
@@ -122,33 +157,20 @@ public class Vehicle {
         this.numWheels = numWheels;
     }
 
-    /**
-     * Gets color.
-     *
-     * @return the color
-     */
-    public String getColor() {
-        return color;
-    }
-
-    /**
-     * Sets color.
-     *
-     * @param color the color
-     */
-    public void setColor(String color) {
-        this.color = color;
-    }
 
     @Override
     public String toString() {
-        return "Vehicle{" +
+        return "{" +
                 "type='" + type + '\'' +
                 ", brand='" + brand + '\'' +
+                ", color='" + color + '\'' +
                 ", model=" + model +
                 ", numPassengers=" + numPassengers +
                 ", numWheels=" + numWheels +
-                ", color='" + color + '\'' +
                 '}';
+    }
+
+    public void clearBuffer(){
+        input.next();
     }
 }
